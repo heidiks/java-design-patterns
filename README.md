@@ -1,1 +1,5 @@
-# java-design-patterns
+# TODO
+- Maven project
+- JUnit
+- Libs
+- Refactoring code
