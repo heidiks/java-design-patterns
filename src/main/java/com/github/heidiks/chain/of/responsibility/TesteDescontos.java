@@ -7,11 +7,12 @@ public class TesteDescontos {
 
 	//TODO Refactoring Teste unitario
 	public static void main(String[] args) {
-		CalculadorDeDesconto desconto = new CalculadorDeDesconto();
+		CorrenteDeDesconto desconto = new CorrenteDeDesconto();
 		
 		Orcamento orcamento = new Orcamento(600.0);
-		orcamento.adicionaItem(new Item("caneta", 250.0));
-		orcamento.adicionaItem(new Item("Lapis", 250.0));
+		orcamento.adicionaItem(new Item("caneta", 10.0));
+		orcamento.adicionaItem(new Item("Lapis", 25.0));
+		orcamento.adicionaItem(new Item("Borracha", 15.0));
 		
 		Double descontoFinal = desconto.calcula(orcamento);
 		
