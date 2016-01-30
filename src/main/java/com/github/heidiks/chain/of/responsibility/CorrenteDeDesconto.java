@@ -4,7 +4,7 @@ import com.github.heidiks.model.Orcamento;
 
 public class CorrenteDeDesconto {
 
-	public double calcula(Orcamento orcamento) {
+	public Double calcula(Orcamento orcamento) {
 		Desconto d1 = new DescontoPorCincoItens();
 		Desconto d2 = new DescontoPorMaisDeQuintetosReais();
 		Desconto d3 = new DescontoPorVendaCasada();
