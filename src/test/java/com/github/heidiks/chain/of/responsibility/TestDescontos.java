@@ -9,16 +9,15 @@ import com.github.heidiks.model.Orcamento;
 
 public class TestDescontos {
 
-	
+	private CorrenteDeDesconto desconto;
+
 	@Before
 	public void setup() {
-		
+		desconto = new CorrenteDeDesconto();
 	}
 	
 	@Test
 	public void desconto_por_cinco_itens() {
-		CorrenteDeDesconto desconto = new CorrenteDeDesconto();
-		
 		Orcamento orcamento = new Orcamento(100.0);
 		orcamento.adicionaItem(new Item("caneta", 10.0));
 		orcamento.adicionaItem(new Item("Lapis", 10.0));

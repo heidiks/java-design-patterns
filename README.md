@@ -1,4 +1,1 @@
-# TODO
-- JUnit
-- Libs
-- Refactoring code
+# Design Patterns
