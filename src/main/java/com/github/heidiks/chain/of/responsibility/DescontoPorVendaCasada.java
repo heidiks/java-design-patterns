@@ -7,7 +7,7 @@ public class DescontoPorVendaCasada implements Desconto {
 	
     private Desconto proximo;
 
-    public double desconto(Orcamento orcamento) {
+    public Double desconto(Orcamento orcamento) {
         if(aconteceuVendaCasadaEm(orcamento)) 
         	return orcamento.getValor() * 0.05;
         else 

@@ -6,7 +6,7 @@ public class DescontoPorCincoItens implements Desconto {
 	
 	private Desconto proximo;
 
-	public double desconto(Orcamento orcamento) {
+	public Double desconto(Orcamento orcamento) {
 		if(orcamento.getItens().size() >= 5)
 			return orcamento.getValor() * 0.1;
 		else

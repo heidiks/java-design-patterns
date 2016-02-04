@@ -11,8 +11,8 @@ public class SemDesconto implements Desconto {
 	}
 	
 	@Override
-	public double desconto(Orcamento orcamento) {
-		return 0;
+	public Double desconto(Orcamento orcamento) {
+		return 0d;
 	}
 
 	@Override

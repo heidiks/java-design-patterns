@@ -26,5 +26,17 @@ public class DescontoTest {
 		
 		Assert.assertTrue(10.0 == desconto.calcula(orcamento));
 	}
-	
+
+	@Test
+	public void desconto_por_mais_de_quinhentos_reais() {
+		Orcamento orcamento = new Orcamento(600.0);
+		orcamento.adicionaItem(new Item("caneta", 100.0));
+		orcamento.adicionaItem(new Item("Lapis", 100.0));
+		orcamento.adicionaItem(new Item("Borracha", 100.0));
+		orcamento.adicionaItem(new Item("Borracha", 200.0));
+
+		Assert.assertTrue(desconto.calcula(orcamento).compareTo(42.0) == 0);
+	}
+
+
 }
