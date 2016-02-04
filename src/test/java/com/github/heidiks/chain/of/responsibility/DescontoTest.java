@@ -1,13 +1,12 @@
 package com.github.heidiks.chain.of.responsibility;
 
+import com.github.heidiks.model.Item;
+import com.github.heidiks.model.Orcamento;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.heidiks.model.Item;
-import com.github.heidiks.model.Orcamento;
-
-public class TestDescontos {
+public class DescontoTest {
 
 	private CorrenteDeDesconto desconto;
 
