@@ -13,7 +13,8 @@ public class CorrenteDeDesconto {
         d1.setProximo(d2);
         d2.setProximo(d3);
         d3.setProximo(d4);
-		
+        d4.setProximo(null);
+
 		return d1.desconto(orcamento);
 	}
 }
