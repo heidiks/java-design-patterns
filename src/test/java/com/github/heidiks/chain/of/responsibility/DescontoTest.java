@@ -48,6 +48,14 @@ public class DescontoTest {
 	}
 
     @Test
+    public void sem_venda_casada() {
+        Orcamento orcamento = new Orcamento(100.0);
+        orcamento.adicionaItem(new Item("LAPIS", 100.0));
+
+        Assert.assertTrue(desconto.calcula(orcamento).compareTo(0.0) == 0);
+    }
+
+    @Test
     public void sem_desconto() {
         Orcamento orcamento = new Orcamento(100.0);
         orcamento.adicionaItem(new Item("CANETA", 100.0));
