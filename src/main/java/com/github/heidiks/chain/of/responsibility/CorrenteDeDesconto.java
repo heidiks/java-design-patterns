@@ -5,16 +5,12 @@ import com.github.heidiks.model.Orcamento;
 public class CorrenteDeDesconto {
 
 	public Double calcula(Orcamento orcamento) {
-		Desconto d1 = new DescontoPorCincoItens();
-		Desconto d2 = new DescontoPorMaisDeQuintetosReais();
-		Desconto d3 = new DescontoPorVendaCasada();
-		Desconto d4 = new SemDesconto();
-		
-        d1.setProximo(d2);
-        d2.setProximo(d3);
-        d3.setProximo(d4);
-        d4.setProximo(null);
+        //TODO criar builder
+		DescontoPorCincoItens chain = new DescontoPorCincoItens(
+				new DescontoPorMaisDeQuintetosReais(
+						new DescontoPorVendaCasada(
+								new SemDesconto())));
 
-		return d1.desconto(orcamento);
+		return chain.desconto(orcamento);
 	}
 }

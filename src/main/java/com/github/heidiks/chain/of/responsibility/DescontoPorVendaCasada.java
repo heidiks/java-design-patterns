@@ -7,6 +7,10 @@ public class DescontoPorVendaCasada implements Desconto {
 	
     private Desconto proximo;
 
+    public DescontoPorVendaCasada(Desconto proximo) {
+        this.proximo = proximo;
+    }
+
     public Double desconto(Orcamento orcamento) {
         if(aconteceuVendaCasadaEm(orcamento)) 
         	return orcamento.getValor() * 0.05;
@@ -23,10 +27,6 @@ public class DescontoPorVendaCasada implements Desconto {
             if(item.getNome().equals(nomeDoItem)) return true;
         
         return false;
-    }
-
-    public void setProximo(Desconto proximo) {
-        this.proximo = proximo;
     }
 
 

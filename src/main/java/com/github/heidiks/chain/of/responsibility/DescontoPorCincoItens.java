@@ -6,6 +6,10 @@ public class DescontoPorCincoItens implements Desconto {
 	
 	private Desconto proximo;
 
+	public DescontoPorCincoItens(Desconto proximo) {
+		this.proximo = proximo;
+	}
+
 	public Double desconto(Orcamento orcamento) {
 		if(orcamento.getItens().size() >= 5)
 			return orcamento.getValor() * 0.1;
@@ -13,9 +17,4 @@ public class DescontoPorCincoItens implements Desconto {
 			return proximo.desconto(orcamento);
 	}
 
-	@Override
-	public void setProximo(Desconto desconto) {
-		this.proximo = desconto;
-	}
-	
 }

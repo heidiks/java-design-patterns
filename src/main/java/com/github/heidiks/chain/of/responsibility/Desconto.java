@@ -8,7 +8,6 @@ import java.math.RoundingMode;
 public interface Desconto {
 	
 	Double desconto(Orcamento orcamento);
-	void setProximo(Desconto desconto);
 
 	default double round(double value) {
 		BigDecimal bd = new BigDecimal(value);

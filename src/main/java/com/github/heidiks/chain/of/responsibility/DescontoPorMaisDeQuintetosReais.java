@@ -7,7 +7,11 @@ import java.text.DecimalFormat;
 public class DescontoPorMaisDeQuintetosReais implements Desconto {
 
 	private Desconto proximo;
-	
+
+	public DescontoPorMaisDeQuintetosReais(Desconto proximo) {
+		this.proximo = proximo;
+	}
+
 	public Double desconto(Orcamento orcamento) {
         DecimalFormat df = new DecimalFormat("#.00");
 
@@ -17,8 +21,4 @@ public class DescontoPorMaisDeQuintetosReais implements Desconto {
 			return proximo.desconto(orcamento);
 	}
 
-	@Override
-	public void setProximo(Desconto desconto) {
-		this.proximo = desconto;
-	}
 }
