@@ -14,4 +14,7 @@ public class Item {
 		return nome;
 	}
 
+	public Double getValor() {
+		return valor;
+	}
 }
