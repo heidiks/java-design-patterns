@@ -19,6 +19,8 @@ public class DescontoPorMaisDeQuintetosReais implements Desconto {
             return round(orcamento.getValor() * 0.07);
 		else
 			return proximo.desconto(orcamento);
+
 	}
+
 
 }

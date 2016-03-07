@@ -1,6 +1,5 @@
 package com.github.heidiks.chain.of.responsibility;
 
-import com.github.heidiks.model.Item;
 import com.github.heidiks.model.Orcamento;
 
 public class DescontoPorVendaCasada implements Desconto {
@@ -23,10 +22,7 @@ public class DescontoPorVendaCasada implements Desconto {
     }
 
     private boolean existe(String nomeDoItem, Orcamento orcamento) {
-        for (Item item : orcamento.getItens()) 
-            if(item.getNome().equals(nomeDoItem)) return true;
-        
-        return false;
+        return orcamento.getItens().stream().filter(item -> item.getNome().equals(nomeDoItem)).count() > 0;
     }
 
 
