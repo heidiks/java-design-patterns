@@ -1,8 +1,8 @@
 package com.github.heidiks.strategy;
 
 import com.github.heidiks.model.Item;
-import com.github.heidiks.model.imposto.*;
 import com.github.heidiks.model.Orcamento;
+import com.github.heidiks.model.imposto.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -63,9 +63,11 @@ public class CalculadorImpostoTest {
     @Test
     public void calcula_IKCV_minima_taxacao() {
         orcamento = new Orcamento(600.0);
+        orcamento.adicionaItem(new Item("Cadeira", 90.0));
         Imposto ikcv = new IKCV();
 
         Assert.assertTrue(calculadorImposto.calcula(orcamento, ikcv).compareTo(36.0) == 0);
     }
+
 
 }
