@@ -69,5 +69,14 @@ public class CalculadorImpostoTest {
         Assert.assertTrue(calculadorImposto.calcula(orcamento, ikcv).compareTo(36.0) == 0);
     }
 
+    @Test
+    public void calcula_IKCV_minima_taxacao_com_orcamento_inferior() {
+        orcamento = new Orcamento(400.0);
+        orcamento.adicionaItem(new Item("Cadeira", 120.0));
+        Imposto ikcv = new IKCV();
+
+        Assert.assertTrue(calculadorImposto.calcula(orcamento, ikcv).compareTo(24.0) == 0);
+    }
+
 
 }
