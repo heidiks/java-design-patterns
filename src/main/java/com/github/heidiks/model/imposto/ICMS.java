@@ -2,6 +2,7 @@ package com.github.heidiks.model.imposto;
 
 import com.github.heidiks.model.Orcamento;
 import com.github.heidiks.template.method.TemplateImpostoCondicional;
+import com.google.common.base.Preconditions;
 
 /**
  * Created by heidi on 07/02/2016.
@@ -21,5 +22,12 @@ public class ICMS extends TemplateImpostoCondicional {
     @Override
     protected boolean deveUsarMaximaTaxacao(Orcamento orcamento) {
         return false;
+    }
+
+    @Override
+    public Double calcula(Orcamento orcamento) {
+        Preconditions.checkArgument(maximaTaxacao(orcamento) == null);
+
+        return round(minimaTaxacao(orcamento));
     }
 }
