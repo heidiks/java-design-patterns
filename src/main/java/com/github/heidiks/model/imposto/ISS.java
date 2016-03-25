@@ -26,6 +26,7 @@ public class ISS extends TemplateImpostoCondicional {
 
     @Override
     public Double calcula(Orcamento orcamento) {
+        Preconditions.checkArgument(deveUsarMaximaTaxacao(orcamento) == false);
         Preconditions.checkArgument(maximaTaxacao(orcamento) == null);
 
         return round(minimaTaxacao(orcamento));
