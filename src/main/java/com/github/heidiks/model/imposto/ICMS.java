@@ -8,9 +8,12 @@ import com.github.heidiks.template.method.TemplateImposto;
  */
 public class ICMS extends TemplateImposto {
 
+    public ICMS() {
+    }
+
     @Override
     protected Double calculaTaxa(Orcamento orcamento) {
-        return orcamento.getValor() * 0.1;
+        return orcamento.getValor() * 0.1 + calculoOutroImposto(orcamento);
     }
 
 }

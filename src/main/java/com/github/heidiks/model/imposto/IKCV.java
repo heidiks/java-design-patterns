@@ -8,6 +8,10 @@ import com.github.heidiks.template.method.TemplateImpostoCondicional;
  */
 public class IKCV extends TemplateImpostoCondicional {
 
+    public IKCV() {
+
+    }
+
     private boolean existeItemMaiorQueCemReais(Orcamento orcamento) {
         return orcamento.getItens().stream().filter(item -> item.getValor() > 100).count() > 0;
     }

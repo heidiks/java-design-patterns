@@ -6,7 +6,15 @@ import com.github.heidiks.model.imposto.Imposto;
 /**
  * Created by heidi on 25/03/2016.
  */
-public abstract class TemplateImposto implements Imposto {
+public abstract class TemplateImposto extends Imposto {
+
+    public TemplateImposto(Imposto outroImposto) {
+        super(outroImposto);
+    }
+
+    public TemplateImposto() {
+        super();
+    }
 
     @Override
     public Double calcula(Orcamento orcamento) {

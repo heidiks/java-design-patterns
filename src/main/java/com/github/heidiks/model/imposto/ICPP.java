@@ -8,6 +8,13 @@ import com.github.heidiks.template.method.TemplateImpostoCondicional;
  */
 public class ICPP extends TemplateImpostoCondicional {
 
+    public ICPP(Imposto outroImposto) {
+        super(outroImposto);
+    }
+
+    public ICPP() {
+    }
+
     @Override
     public Double minimaTaxacao(Orcamento orcamento) {
         return orcamento.getValor() * 0.05;
