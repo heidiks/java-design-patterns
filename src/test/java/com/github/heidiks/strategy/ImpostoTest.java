@@ -6,6 +6,7 @@ import com.github.heidiks.model.imposto.ICPP;
 import com.github.heidiks.model.imposto.ISS;
 import com.github.heidiks.model.imposto.Imposto;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -16,26 +17,24 @@ import static org.hamcrest.CoreMatchers.is;
 public class ImpostoTest {
 
     private Orcamento orcamento;
-    private CalculadorImposto calculadorImposto;
+
+    @Before
+    public void setUp() {
+        orcamento = new Orcamento(500.0);
+    }
 
     @Test
     public void calcula_imposto_ISS_e_ICMS() {
         Imposto impostos = new ISS(new ICMS());
 
-        Orcamento orcamento = new Orcamento(500.0);
-
         Assert.assertThat(impostos.calcula(orcamento), is(80.0));
-
     }
 
     @Test
     public void calcula_imposto_ICPP_e_ICMS() {
         Imposto impostos = new ICPP(new ICMS());
 
-        Orcamento orcamento = new Orcamento(500.0);
-
         Assert.assertThat(impostos.calcula(orcamento), is(75.0));
-
     }
 
 
